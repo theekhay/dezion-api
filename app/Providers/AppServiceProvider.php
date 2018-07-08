@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191) ;
-        //Resource::WithoutWrapping();
+        //Resource::WithoutWrapping(); //uncomment this to rteurn the json response without the data wrapper. 
 
     }
 
