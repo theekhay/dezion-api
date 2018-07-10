@@ -52,7 +52,7 @@ class MemberController extends Controller
         $member->email         = $request->email;
         $member->dob         = $request->dob;
         $member->address         = $request->address;
-        $member->phone_number = $request->phone_number;
+        //$member->phone_number = $request->phone_number;
         $member->occupation = $request->occupation;
         $member->gender = $request->gender;
         $member->marital_status = $request->marital_status;
