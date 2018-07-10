@@ -50,6 +50,7 @@ class MemberController extends Controller
         $member->surname       = $data->surname;
         $member->middlename       = $data->middlename;
         $member->email         = $data->email;
+        $member->dob         = $data->dob;
         $member->address         = $data->address;
         $member->phone_number = $data->phone_number;
         $member->occupation = $data->occupation;
