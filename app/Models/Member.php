@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     /**
-    * The attributes that are mass assignable.
+    * The attributes that are not mass assignable.
     *
     */
     protected $guarded = [

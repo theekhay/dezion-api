@@ -27,8 +27,9 @@ class MemberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    {   
+        
+
     }
 
     /**
@@ -39,7 +40,33 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        //clean data here
+
+        $member = new Member();
+
+        $member->firstname     = $data->firstname;
+        $member->surname       = $data->surname;
+        $member->middlename       = $data->middlename;
+        $member->email         = $data->email;
+        $member->address         = $data->address;
+        $member->phone_number = $data->phone_number;
+        $member->occupation = $data->occupation;
+        $member->gender = $data->gender;
+        $member->marital_status = $data->marital_status;
+
+        if( ! $member->save() )
+        {
+            echo $data->error_code = 1000;
+            return;
+
+        }
+
+        $data->message = "success";
+        $data->status_code = 200;
+        echo $data;
+
     }
 
     /**
