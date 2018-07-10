@@ -59,14 +59,11 @@ class MemberController extends Controller
 
         if( ! $member->save() )
         {
-            echo $data->error_code = 1000;
-            return;
+            return new MemberResource($member);
 
         }
 
-        $data->message = "success";
-        $data->status_code = 200;
-        echo $data;
+        return new MemberResource($member);
 
     }
 
