@@ -46,7 +46,7 @@ class MemberController extends Controller
 
         $member = new Member();
 
-        $member->firstname     = $data->firstname;
+        $member->firstname     = $request->firstname;
         $member->surname       = $data->surname;
         $member->middlename       = $data->middlename;
         $member->email         = $data->email;
