@@ -57,6 +57,7 @@ class MemberController extends Controller
         $member->gender = $request->gender;
         $member->marital_status = $request->marital_status;
 
+        //throw an exception here 
         if( ! $member->save() )
         {
             return new MemberResource($member);
