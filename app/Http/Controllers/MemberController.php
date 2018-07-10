@@ -47,15 +47,15 @@ class MemberController extends Controller
         $member = new Member();
 
         $member->firstname     = $request->firstname;
-        $member->surname       = $data->surname;
-        $member->middlename       = $data->middlename;
-        $member->email         = $data->email;
-        $member->dob         = $data->dob;
-        $member->address         = $data->address;
-        $member->phone_number = $data->phone_number;
-        $member->occupation = $data->occupation;
-        $member->gender = $data->gender;
-        $member->marital_status = $data->marital_status;
+        $member->surname       = $request->surname;
+        $member->middlename       = $request->middlename;
+        $member->email         = $request->email;
+        $member->dob         = $request->dob;
+        $member->address         = $request->address;
+        $member->phone_number = $request->phone_number;
+        $member->occupation = $request->occupation;
+        $member->gender = $request->gender;
+        $member->marital_status = $request->marital_status;
 
         if( ! $member->save() )
         {
