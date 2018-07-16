@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
+use App\Http\Resources\Team as TeamResource;
 use Illuminate\Http\Request;
 
 class TeamController extends Controller
@@ -14,7 +15,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        echo "here";
+        $teams = Team::paginate(20);
+        return TeamResource::collection($teams);
     }
 
     /**
@@ -35,7 +37,14 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate( $request, [
+            'name' => 'required|unique:teams',
+            'head' => 'required|integer',
+        ]);
+
+        $team = Team::create( $request->all() );
+        return response()->json($team, 201);
+
     }
 
     /**

@@ -19,7 +19,7 @@ class Team extends Model
     *
     */
     protected $fillable = [
-        
+        'name', 'head'
     ];
 
 

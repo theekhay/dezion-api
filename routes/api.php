@@ -19,6 +19,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Route::get('members', 'MemberController@index');
 
-Route::resources([
-    'member'  => 'MemberController',
-]);
+// Route::resources([
+//     'member'  => 'MemberController',
+// ]);
+
+Route::group([
+    
+    'prefix' => 'v1'
+    
+    ], function() {
+    
+        Route::resources([
+            'member'  => 'MemberController',
+            'team'    =>  'TeamController',
+        ]);
+    
+    
+    });

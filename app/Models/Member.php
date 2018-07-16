@@ -19,6 +19,9 @@ class Member extends Model
         'membership_level'
     ];
 
+    //uncomment the code below if the associated table name is not the same as the class name
+    //protected $table = 'custom_products';
+
 
     /**
     * retursn the membership level of a member.
