@@ -30,9 +30,11 @@ Route::group([
     ], function() {
     
         Route::resources([
-            'member'  => 'MemberController',
-            'team'    =>  'TeamController',
+            'member'        => 'MemberController',
+            'team'          =>  'TeamController',
+            'department'    =>  'DepartmentController',
         ]);
+        
     
     
     });
