@@ -26,7 +26,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        //this should allow you add a new department 
     }
 
     /**
