@@ -26,7 +26,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //this should allow you add a new department 
+        //loads up the view for creating a new department
+    
     }
 
     /**
@@ -37,7 +38,16 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //get the department details.
+        $department = Department::create([
+            'created_by'   => 2, // $request->user()->id,
+            'name'         => $request->name,
+            'head'         => $request->head,
+            'team_id'      => $request->team,
+          ]);
+
+          //add extra logic to sanitize user data here  
+        return new DepartmentResource($department);
     }
 
     /**
